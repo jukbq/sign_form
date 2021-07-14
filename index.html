@@ -11,8 +11,9 @@
 
 <body>
     <section class="form_section">
-
+        <!----------------------------Sign up form-------------------------------->
         <form class="row g-3  needs-validation signUpForm" novalidate>
+            <h2>Pleas sign up</h2>
             <div class="form-floating col-md-4 position-relative">
                 <input type="text" class="form-control" name="fname" value="" placeholder="First name" required>
                 <label for="fname">First name</label>
@@ -46,8 +47,41 @@
             <div class="col-12">
                 <button class="btn supBtn btn-primary" type="submit">Отправить форму</button>
             </div>
-            <a href="#" class="sup">Sign up now</a>
+            <a href="#" class="sun">Sign up now</a>
         </form>
+
+        <!----------------------------Sign in form-------------------------------->
+        <form class="row g-3  needs-validation signInForm" novalidate>
+            <h2>Pleas sign in</h2>
+            <div class="form-floating col-md-4 position-relative">
+                <input type="email" class="form-control" name="email" value="" placeholder="email@example.com" required>
+                <label for="email">Email</label>
+                <div class="invalid-tooltip">
+                    Empty field
+                </div>
+            </div>
+
+            <div class="form-floating col-md-4 position-relative">
+                <input type="password" class="form-control" name="password" value="" placeholder="password" required>
+                <label for="password">Password</label>
+                <div class="invalid-tooltip">
+                    Empty field
+                </div>
+            </div>
+
+            <div class="col-12">
+                <button class="btn supBtn btn-primary" type="submit">Отправить форму</button>
+            </div>
+            <a href="#" class="sin">Sign In now</a>
+        </form>
+        <!-------------------------------Person card------------------------------------>
+        <div class="person_card">
+            <div class="person_img"></div>
+            <div class="person_name"></div>
+            <div class="person_email"></div>
+            <p>Sediner & Web desiner</p>
+
+        </div>
 
     </section>
 

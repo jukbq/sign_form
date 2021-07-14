@@ -1,10 +1,10 @@
-$('.sin').click(function() {
-    $('.sUp').addClass('displayNone')
-    $('.sIp').addClass('displayFlex')
+$('.sun').click(function() {
+    $('.signUpForm').addClass('displayNone')
+    $('.signInForm').addClass('displayFlex')
 });
-$('.sup').click(function() {
-    $('.sUp').removeClass('displayNone')
-    $('.sIp').removeClass('displayFlex')
+$('.sin').click(function() {
+    $('.signUpForm').removeClass('displayNone')
+    $('.signInForm').removeClass('displayFlex')
 });
 // Пример стартового JavaScript для отключения отправки форм при наличии недопустимых полей
 (function() {
