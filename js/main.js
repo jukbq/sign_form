@@ -6,58 +6,46 @@ $('.sin').click(function() {
     $('.signUpForm').removeClass('displayNone')
     $('.signInForm').removeClass('displayFlex')
 });
-// Пример стартового JavaScript для отключения отправки форм при наличии недопустимых полей
-(function() {
-    'use strict'
 
-    // Получите все формы, к которым мы хотим применить пользовательские стили проверки Bootstrap
-    var forms = document.querySelectorAll('.needs-validation')
 
-    // Зацикливайтесь на них и предотвращайте отправку
-    Array.prototype.slice.call(forms)
-        .forEach(function(form) {
-            form.addEventListener('submit', function(event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-        })
-})()
 /*--------------------------------------------------*/
 
 
 let personArr = [];
 let person = {};
+let x = []
 
-$('.dataObj').find('input').blur(function() {
+$('.signUpForm').find('input').blur(function() {
+    if (this.name == 'email') {
+        this.value = this.value.toLowerCase();
+        person[this.name] = $(this).val();
+    }
     person[this.name] = $(this).val();
+
 });
 
-$('.signInBtn').click(function(e) {
-    $('.dataObj').find('input').each(function() {
-        if (this.value == '') {
-            e.preventDefault();
-
-            console.log('stop');
-        }
-
-
-
+$('.supBtn').click(function(e) {
+    e.preventDefault();
+    $.each(person, function(key, value) {
+        x.push(value)
     });
+    if (x.length < 4) {
 
-    if (personArr !== '') {
-        if (localStorage.length > 0 && localStorage.getItem('personArr')) {
-            personArr = JSON.parse(localStorage.getItem('personArr'))
+        x = []
+    }
+    if (x.length == 4) {
+        if (personArr !== '') {
+            if (localStorage.length > 0 && localStorage.getItem('personArr')) {
+                personArr = JSON.parse(localStorage.getItem('personArr'))
+            }
+
+            personArr.push(person)
+            localStorage.setItem('personArr', JSON.stringify(personArr));
         }
-        personArr.push(person)
-        localStorage.setItem('personArr', JSON.stringify(personArr));
-    };
+    }
+    /* console.log(JSON.parse(localStorage.getItem('personArr')));
+    console.log(x); */
 
 
-    /*     console.log(person);
-        console.log(personArr); */
 
 });
